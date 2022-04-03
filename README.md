@@ -17,8 +17,8 @@ cd TVAE
 - keras
 - tensorflow
 - numpy, matplotlib, scipy
-- 2 transformer layers 
 - encoder and decoder - both have the same architecture
+- transformer layers 
 
 
 ### MNIST
