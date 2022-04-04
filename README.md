@@ -20,7 +20,7 @@ cd TVAE
 pip install -r requirements.txt
 ```
 
-### MNIST, Fashion-MNIST, CVHN
+### Training
 
 Use the ```config.yml``` configuration file to train a TVAE with desired encoder and decoder network parameters, training parameters (e.g.: learning rate) and the data set (MNIST, Fashion-MNIST or SVHN). Then run the main script ```TVAE.py``` as follows:
 
@@ -29,7 +29,7 @@ python TVAE.py
 ```
 
 
-### CelebA
+#### CelebA
 
 Firstly, download the [celebA dataset align](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) into the ![dataset](dataset/) directory. After installing all the third-party [packages required](https://keras.io/examples/generative/dcgan_overriding_train_step/),  we can run the model by:
 
