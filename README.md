@@ -1,5 +1,6 @@
 # TVAE for Image Reconstruction
-Transformer-based Variational AutoEncoder - Keras implementation on MNIST, Fashion-MNIST, SVHN, and CelebA datasets
+Transformer-based Variational AutoEncoder - Keras implementation. 
+The TVAE leverages the shared attention layers of the Transformer to maximize the contextual information, and converts an input to the corresponding training distribution without increasing model complexity.
 
 ## Dependencies
 
