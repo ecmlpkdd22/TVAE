@@ -22,10 +22,12 @@ cd TVAE
 pip install -r requirements.txt
 ```
 
-Use the ```config.yml``` configuration file to train a Variational Auto-Encoder (VAE), with desired encoder and decoder network parameters and decoder type (Bernoulli or Gaussian), training parameters (e.g.: learning rate) and the data set (MNIST or Frey face). Then run the main script ```VAE.py``` as follows:
+### MNIST, Fashion-MNIST, CVHN
+
+Use the ```config.yml``` configuration file to train a TVAE with desired encoder and decoder network parameters, training parameters (e.g.: learning rate) and the data set (MNIST, Fashion-MNIST or SVHN). Then run the main script ```TVAE.py``` as follows:
 
 ```bash
-python VAE.py
+python TVAE.py
 ```
 
 ### MNIST
