@@ -1,5 +1,5 @@
 # TVAE for Image Reconstruction
-Transformer-based Variational AutoEncoder - Keras implementation on MNISTt, Fashion-MNIST, SVHN, and CelebA datasets
+Transformer-based Variational AutoEncoder - Keras implementation on MNIST, Fashion-MNIST, SVHN, and CelebA datasets
 
 ## Dependencies
 
@@ -31,7 +31,7 @@ python TVAE.py
 
 ### CelebA
 
-Firstly, download the [celebA dataset](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) into the ![dataset](dataset/) directory. After installing all the third-party [packages required](https://keras.io/examples/generative/dcgan_overriding_train_step/),  we can run the model by:
+Firstly, download the [celebA dataset align](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) into the ![dataset](dataset/) directory. After installing all the third-party [packages required](https://keras.io/examples/generative/dcgan_overriding_train_step/),  we can run the model by:
 
 ```python
 python TVAE.py
