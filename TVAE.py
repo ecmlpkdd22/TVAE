@@ -1,5 +1,4 @@
 """
-
 from keras.layers import Dense, Lambda
 from keras.models import Model, load_model
 from keras import backend as kb
@@ -20,7 +19,7 @@ tf.random.set_seed(221)
 
 
 class TVAE(Model):
-    """ Variational Auto-Encoder class via subclassing keras.Model.
+    """ Transformer Variational Auto-Encoder class via subclassing keras.Model.
     Encoder is Gaussian -> q_{phi}(z|x) = N(z; mu, exp(log_var))
     Decoder is Bernoulli -> p_{theta}(x|z) = Bern(p) where p technically a probability value corresponding to each
     value in the input_dim elements of the output Tensor.
@@ -42,7 +41,10 @@ class TVAE(Model):
             The number of latent dimensions into which the VAE encodes the input data.
 
         decoder_hidden_dim : int
-             The number of nodes in the hidden layer of the decoder.
+             The number of nodes in the hidden layer of the decoder. 
+                
+        transformer : int
+             The number of hidden layers to manipulate the input data.        
 
         name : str
             The name of the model.
@@ -50,7 +52,7 @@ class TVAE(Model):
         # Inherit everything from keras.Model.
         super(TVAE, self).__init__(name=name)
 
-        # Paper: All parameters, both variational and generative, were initialized by random sampling from N (0, 0.01)
+        # Paper: All parameters, transformer, variational and generative, were initialized by random sampling from N (0, 0.01)
         self.initializer = tf.initializers.RandomNormal(mean=0.0, stddev=0.01, seed=None)
         # Tanh activation functions in MLP and paper says MLP (not ReLU in MLP)
         self.activation = "tanh"
@@ -234,6 +236,9 @@ class TVAE(Model):
 
         decoder_hidden_dim : int
              The number of nodes in the hidden layer of the decoder.
+                                              
+        transformer : int
+             The number of hidden layers to manipulate the input data.  
 
         name : str
             The name of the model.
