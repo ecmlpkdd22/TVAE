@@ -1,16 +1,6 @@
 # TVAE for Image Reconstruction
 Transformer-based Variational AutoEncoder - Keras implementation on MNISTt, Fashion-MNIST, SVHN, and CelebA datasets
 
-## Usage
-
-**Clone this repository to local**
-
-```python
-https://github.com/ecmlpkdd22/TVAE.git
-
-cd TVAE
-```
-
 ## Dependencies and architecture
 
 - 1 GPU
@@ -20,6 +10,23 @@ cd TVAE
 - encoder and decoder - both have the same architecture
 - transformer layers 
 
+## Usage
+
+**Clone this repository to local**
+
+```python
+git clone https://github.com/ecmlpkdd22/TVAE.git
+
+cd TVAE
+
+pip install -r requirements.txt
+```
+
+Use the ```config.yml``` configuration file to train a Variational Auto-Encoder (VAE), with desired encoder and decoder network parameters and decoder type (Bernoulli or Gaussian), training parameters (e.g.: learning rate) and the data set (MNIST or Frey face). Then run the main script ```VAE.py``` as follows:
+
+```bash
+python VAE.py
+```
 
 ### MNIST
 
