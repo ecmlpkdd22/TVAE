@@ -1,14 +1,12 @@
 # TVAE for Image Reconstruction
 Transformer-based Variational AutoEncoder - Keras implementation on MNISTt, Fashion-MNIST, SVHN, and CelebA datasets
 
-## Dependencies and architecture
+## Dependencies
 
 - 1 GPU
 - keras
 - tensorflow
-- numpy, matplotlib, scipy
-- encoder and decoder - both have the same architecture
-- transformer layers 
+- numpy, matplotlib, scipy 
 
 ## Usage
 
@@ -30,29 +28,14 @@ Use the ```config.yml``` configuration file to train a TVAE with desired encoder
 python TVAE.py
 ```
 
-### MNIST
-
-##### ![src/mnist_train.py](src/mnist_train.py)
-- it trains TVAE based on the hyperparameters defined in ![src/mnist_params.py](src/mnist_params.py)
-- after training, the model is saved in the ![models](models/) directory and can be used to generate new images
-
-
-### Fashion-MNIST
-
-##### ![src/f_mnist_train.py](src/f_mnist_train.py)
-- it trains TVAE based on the hyperparameters defined in ![src/f_mnist_params.py](src/f_mnist_params.py)
-
-
-### SVHN
-
-##### ![src/svhn_train.py](src/svhn_train.py)
-- it trains TVAE based on the hyperparameters defined in ![src/svhn_params.py](src/svhn_params.py)
-
 
 ### CelebA
 
-##### ![src/celeba_train.py](src/celeba_train.py)
-- it trains TVAE based on the hyperparameters defined in ![src/celeba_params.py](src/celeba_params.py)
+Firstly, download the [celebA dataset](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) into the ![dataset](dataset/) directory. After installing all the third-party packages required,  we can run the model by:
+
+```python
+python TVAE.py
+```
 
 
 
