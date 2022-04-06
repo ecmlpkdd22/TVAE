@@ -15,11 +15,11 @@ else:
 
 
 class BilinearInterpolation(Layer):
-    """Performs bilinear interpolation as a keras layer
+    """Performs linear interpolation as a keras layer
 
     def __init__(self, output_size, **kwargs):
         self.output_size = output_size
-        super(BilinearInterpolation, self).__init__(**kwargs)
+        super(LinearInterpolation, self).__init__(**kwargs)
 
     def get_config(self):
         return {
