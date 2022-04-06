@@ -32,8 +32,3 @@ python TVAE.py
 ```
 
 
-### Acknowledgements
-We truely thanksful of the following two piror works. Particularly, part of the code is inspired by [[VAE]](https://github.com/chaitanya100100/VAE-for-Image-Generation)
-+ Auto-encoding variational bayes [[paper]](https://arxiv.org/pdf/1312.6114.pdf) [[VAE.keras]](https://github.com/chaitanya100100/VAE-for-Image-Generation)
-+ Spatial Transformer Networks [[paper]](https://arxiv.org/pdf/1506.02025.pdf) [[STN.keras]](https://github.com/oarriaga/STN.keras)
-
