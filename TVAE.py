@@ -21,7 +21,7 @@ tf.random.set_seed(221)
 class TVAE(Model):
     """ Transformer Variational Auto-Encoder class via subclassing keras.Model.
     Encoder is Gaussian -> q_{phi}(z|x) = N(z; mu, exp(log_var))
-    Decoder is Bernoulli -> p_{theta}(x|z) = Bern(p) where p technically a probability value corresponding to each
+    Decoder is Bernoulli -> p_{theta}(x|z) = Bern(p) where p technically a probability value of transformation to each
     value in the input_dim elements of the output Tensor.
     """
 
@@ -91,10 +91,10 @@ class TVAE(Model):
             mini-batch size of the optimizer and latent_dim is an argument to the class constructor denoting the
             number of latent dimensions
         """
-        # Parameters of q(z|x) (equation 9)
+        # Parameters of q(z|x)
         mu, log_var = gauss_params
 
-        # Sample epsilon and calculate latent vector Z (equation 10)
+        # Sample epsilon and calculate latent vector Z
         eps = kb.random_normal(shape=(kb.shape(mu)[0], kb.shape(mu)[1]))
         # standard deviation = sqrt(sigma) ; using the exponential assures that the result is positive
         std = kb.exp(0.5*log_var)
@@ -188,7 +188,7 @@ class TVAE(Model):
         reconstruction, _ = self.decode(z)
 
         # Create the loss tensors.
-        # Computes negative! KL Divergence Loss (First part of equation 24, but negative here to have -KLD)
+        # Computes negative! KL Divergence Loss
         negative_kl_loss = kb.mean(
             0.5 * kb.sum(-log_var + kb.exp(log_var) + kb.square(mu) - 1, axis=1))
 
@@ -289,10 +289,10 @@ class TVAE(Model):
             mini-batch size of the optimizer and latent_dim is an argument to the class constructor denoting the
             number of latent dimensions
         """
-        # Parameters of q(z|x) (equation 9)
+        # Parameters of q(z|x)
         mu, log_var = gauss_params
 
-        # Sample epsilon and calculate latent vector Z (equation 10)
+        # Sample epsilon and calculate latent vector Z
         eps = kb.random_normal(shape=(kb.shape(mu)[0], kb.shape(mu)[1]))
         # standard deviation = sqrt(sigma) ; using the exponential assures that the result is positive
         std = kb.exp(0.5*log_var)
@@ -394,7 +394,7 @@ class TVAE(Model):
         reconstruction_mu, reconstruction_log_var = self.decode(z)
 
         # Create the loss tensors.
-        # Computes negative! KL Divergence Loss (First part of equation 24, but negative here to have -KLD)
+        # Computes negative! KL Divergence Loss
         negative_kl_loss = kb.mean(
             0.5 * kb.sum(-log_var + kb.exp(log_var) + kb.square(mu) - 1, axis=1))
 
@@ -446,7 +446,6 @@ def plot_imgs_compare(n_imgs, x, y, x_reconstructed, fig_name):
     Returns
     -------
     None
-
 
 
 
